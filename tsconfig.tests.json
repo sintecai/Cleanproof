@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "skipLibCheck": true,
+    "rewriteRelativeImportExtensions": true,
+    "rootDir": ".",
+    "outDir": ".test-build",
+    "types": [
+      "node"
+    ]
+  },
+  "include": [
+    "src/domain/**/*.ts",
+    "src/application/**/*.ts",
+    "src/storage/contracts.ts",
+    "src/storage/encryption.ts",
+    "src/storage/migrations.ts",
+    "src/storage/catalogue.ts",
+    "src/storage/workflowRepository.ts",
+    "src/media/vault.ts",
+    "src/media/base64.ts",
+    "src/reporting/**/*.ts",
+    "src/storage/schema.ts",
+    "src/storage/inspectionRepository.ts",
+    "tests/**/*.ts",
+    "src/auth/**/*.ts",
+    "src/sync/**/*.ts",
+    "supabase/functions/_shared/**/*.ts",
+    "src/development/**/*.ts"
+  ],
+  "exclude": [
+    "src/**/*.web.ts",
+    "src/**/*.web.tsx"
+  ]
+}

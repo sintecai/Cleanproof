@@ -1,0 +1,100 @@
+{
+  "scope": "Version 3 standard browser downloads and exact staging-origin transfer verified; production/signing/native gates remain open",
+  "baselineCommit": "2ed8f9b4ab162057c7285251938554692bee6ba4",
+  "gates": [
+    {
+      "id": "identifier-ownership",
+      "status": "blocked",
+      "evidence": "Existing organisation consoles unavailable; candidates not registered."
+    },
+    {
+      "id": "native-auth-workspace",
+      "status": "blocked",
+      "evidence": "Native auth-first, secure session/account selection and receive-first workspace restore implemented; installed devices still unavailable."
+    },
+    {
+      "id": "registration-login-recovery",
+      "status": "blocked",
+      "evidence": "Immediate signup and logout/login passed again against real services; previously authenticated browser workflow passed. Recovery mailbox/native reset pending."
+    },
+    {
+      "id": "pdf-save-open",
+      "status": "blocked",
+      "evidence": "Actual browser download passed in preview v14. Two real-service restored-data PDFs parsed again; installed OS export/open pending."
+    },
+    {
+      "id": "deletion-lifecycle",
+      "status": "blocked",
+      "evidence": "Hosted erasure service passed for disposable and populated companies; browser/native UI, production retention and backup acceptance pending."
+    },
+    {
+      "id": "offline-sync-isolation",
+      "status": "blocked",
+      "evidence": "Real staging transaction/photo ACK and independent host projection passed after receive-first fix; native offline restart and interrupted-device acceptance pending."
+    },
+    {
+      "id": "production-services",
+      "status": "blocked",
+      "evidence": "All 12 migrations retained; photo-transfer/delete-account v1 ACTIVE with verify_jwt=true and exact deployed-source match. Eight live negative JWT/CORS checks passed. Confirm email remains ON; approved production web origin/sender and positive two-account acceptance remain pending."
+    },
+    {
+      "id": "android-aab-16kb",
+      "status": "blocked",
+      "evidence": "No authorised organisation signing connection, confirmed identifiers or approved 1024px icon. User prohibits new sign-ins/credential requests. Pinned administrator commands/profiles prepared; no native build or upload."
+    },
+    {
+      "id": "ios-archive-privacy",
+      "status": "blocked",
+      "evidence": "No authorised organisation signing connection, confirmed identifiers or approved 1024px icon. User prohibits new sign-ins/credential requests. Pinned administrator commands/profiles prepared; no native build or upload."
+    },
+    {
+      "id": "store-disclosures-billing",
+      "status": "blocked",
+      "evidence": "Policy drafts prepared; management review, URLs, reviewer account and commercial scope unresolved."
+    },
+    {
+      "id": "device-acceptance",
+      "status": "blocked",
+      "evidence": "No connected Android/iPhone."
+    },
+    {
+      "id": "backup-restore",
+      "status": "blocked",
+      "evidence": "Restore policy and PGlite fixtures pass; actual paired dump/private-object restore and original-browser protected backup remain pending."
+    }
+  ],
+  "publicShowcase": {
+    "url": "https://cleanproof-public-showcase.sintecai26.chatgpt.site",
+    "commit": "c508c65317b49cdfea8b251a99149d7731c357bb",
+    "connected": false,
+    "native": false,
+    "browserTabSwitches": 20,
+    "downloadedPdfBytes": 351317,
+    "testedAt": "2026-10-31",
+    "commentEntry": "Historical 1 November fill + keyboard entry and same draft reopen passed; full comment-to-completed-PDF sequence not retested."
+  },
+  "freshEvidence": "release/evidence/verification-2026-11-02.json",
+  "freshHostChecks": {
+    "applicationPassed": 147,
+    "applicationSkipped": 1,
+    "backendPassed": 36,
+    "callbackReleaseConfigurationPassed": 13,
+    "adminAndBuildConfigPassed": 9,
+    "webBuildPassed": true,
+    "nativeBuildPassed": false
+  },
+  "productionMigrationGate": {
+    "status": "passed",
+    "evidence": "release/evidence/production-execution-current.json",
+    "newMigrationsApplied": 9,
+    "totalMigrations": 12
+  },
+  "currentEvidence": "release/RELEASE-CANDIDATE-CURRENT.md",
+  "submissionReady": false,
+  "readiness": {
+    "readyToBuild": "blocked: confirmed IDs/EAS org/icon/signing unavailable",
+    "readyForInternalTesting": "blocked: no signed AAB/IPA",
+    "readyForReview": false,
+    "published": false
+  }
+}

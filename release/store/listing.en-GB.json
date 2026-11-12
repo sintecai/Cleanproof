@@ -1,0 +1,14 @@
+{
+  "locale": "en-GB",
+  "status": "draft-owner-and-binary-review-required",
+  "name": "CleanProof",
+  "appleSubtitle": "Cleaning inspections & reports",
+  "googleShortDescription": "Cleaning inspections, photographic evidence and professional inspection reports.",
+  "description": "CleanProof helps commercial cleaning teams record site inspections and keep clear evidence of their work.\n\nOrganise customers and sites, build versioned checklists, record Pass, Fail or Not Applicable answers, add comments and photographs, and track corrective actions. Reopen saved inspections and prepare branded reports for your records.\n\nSaved-on-device work and synchronisation status are shown separately. An internet connection is required for account services and server synchronisation. Reports exported to your device are separate copies and cannot be recalled by revoking service access.\n\nProvided by Sicy International Ltd.",
+  "appleKeywords": "cleaning,inspection,commercial,checklist,quality,evidence,maintenance,report",
+  "privacyUrl": null,
+  "supportUrl": null,
+  "deletionUrl": null,
+  "reviewerAccount": "not provisioned; secure store fields only",
+  "publicSubmissionApproved": false
+}

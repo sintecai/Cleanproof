@@ -1,0 +1,1 @@
+sql-wasm.js and sql-wasm.wasm are unmodified sql.js 1.13.0 distribution assets from the locked npm dependency. See sql-js-LICENSE.txt and THIRD-PARTY-NOTICES.txt. The browser adapter alone loads them; native storage continues using expo-sqlite with SQLCipher.

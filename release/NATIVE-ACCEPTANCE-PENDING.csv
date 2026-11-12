@@ -1,0 +1,13 @@
+tester,platform,device,os,build,commit,check,result,evidence
+UNASSIGNED,Android,,,,,"signup/login/recovery",PENDING,
+UNASSIGNED,Android,,,,,"workspace/account switching",PENDING,
+UNASSIGNED,Android,,,,,"photos/comments/inspection",PENDING,
+UNASSIGNED,Android,,,,,"report viewing and actual PDF export",PENDING,
+UNASSIGNED,Android,,,,,"offline restart/sync",PENDING,
+UNASSIGNED,Android,,,,,"disposable erasure/company isolation",PENDING,
+UNASSIGNED,iPhone,,,,,"signup/login/recovery",PENDING,
+UNASSIGNED,iPhone,,,,,"workspace/account switching",PENDING,
+UNASSIGNED,iPhone,,,,,"photos/comments/inspection",PENDING,
+UNASSIGNED,iPhone,,,,,"report viewing and actual PDF export",PENDING,
+UNASSIGNED,iPhone,,,,,"offline restart/sync",PENDING,
+UNASSIGNED,iPhone,,,,,"disposable erasure/company isolation",PENDING,

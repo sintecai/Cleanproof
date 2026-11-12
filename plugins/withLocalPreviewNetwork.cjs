@@ -1,0 +1,5 @@
+const {withAndroidManifest,withDangerousMod}=require('@expo/config-plugins');const fs=require('node:fs');const path=require('node:path');
+/** Synthetic preview builds only: exact loopback/emulator hosts, never global cleartext. */
+module.exports=config=>{if(process.env.EXPO_PUBLIC_CLEANPROOF_DEMO_TOOLS!=='1')return config;
+ config=withAndroidManifest(config,c=>{const app=c.modResults.manifest.application[0];app.$['android:networkSecurityConfig']='@xml/cleanproof_preview_network';return c;});
+ return withDangerousMod(config,['android',async c=>{const dir=path.join(c.modRequest.platformProjectRoot,'app/src/main/res/xml');fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,'cleanproof_preview_network.xml'),'<?xml version="1.0" encoding="utf-8"?><network-security-config><base-config cleartextTrafficPermitted="false"/><domain-config cleartextTrafficPermitted="true"><domain includeSubdomains="false">127.0.0.1</domain><domain includeSubdomains="false">localhost</domain><domain includeSubdomains="false">10.0.2.2</domain></domain-config></network-security-config>');return c;}]);};

@@ -1,0 +1,11 @@
+# LOCAL SYNTHETIC TEST ONLY: numeric-code harness; deployed web uses templates/*.html links.
+# Review and merge into the intended environment. This reference is not deployed.
+[auth]
+enable_signup = true
+minimum_password_length = 12
+[auth.email]
+enable_signup = true
+enable_confirmations = true
+[auth.email.template.confirmation]
+subject = "Verify your CleanProof email"
+content_path = "./supabase/templates/local/confirmation-code.html"

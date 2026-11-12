@@ -1,0 +1,7 @@
+{
+  "site_url": "https://cleanproof-sicy-preview.grassyelf128.chatgpt.site",
+  "uri_allow_list": "https://cleanproof-sicy-preview.grassyelf128.chatgpt.site/reset-password.html",
+  "mailer_autoconfirm": true,
+  "mailer_templates_confirmation_content": "<h2>Confirm your CleanProof account</h2><p><a href=\"{{ .ConfirmationURL }}\">Confirm email address</a></p><p>If you did not request this account, ignore this email.</p>",
+  "mailer_templates_recovery_content": "<h2>Reset your CleanProof password</h2><p><a href=\"{{ .ConfirmationURL }}\">Reset password</a></p><p>If you did not request this reset, ignore this email.</p>"
+}

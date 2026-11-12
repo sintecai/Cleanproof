@@ -1,0 +1,41 @@
+# Local Docker test stack only. Never apply these localhost/OTP settings to hosted staging.
+project_id = "cleanproof-local"
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 17
+[studio]
+enabled = true
+port = 54323
+[inbucket]
+enabled = true
+port = 54324
+[storage]
+enabled = true
+file_size_limit = "10MiB"
+[auth]
+enabled = true
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["cleanproof-demo://account"]
+jwt_expiry = 3600
+enable_signup = false
+[auth.email]
+enable_signup = false
+enable_confirmations = true
+otp_expiry = 1800
+[auth.email.template.recovery]
+subject = "CleanProof local recovery code"
+content_path = "./supabase/templates/local/recovery-code.html"
+
+[functions.photo-transfer]
+# Keep the gateway check AND verify the user in the handler before privileged work.
+verify_jwt = true
+
+[functions.delete-account]
+verify_jwt = true

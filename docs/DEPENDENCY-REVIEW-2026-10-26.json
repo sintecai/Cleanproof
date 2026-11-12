@@ -1,0 +1,91 @@
+{
+  "counts": {
+    "info": 0,
+    "low": 0,
+    "moderate": 3,
+    "high": 5,
+    "critical": 0,
+    "total": 8
+  },
+  "findings": [
+    {
+      "package": "@expo/cli",
+      "severity": "high",
+      "direct": false,
+      "advisory_urls": [],
+      "fixAvailable": {
+        "name": "expo",
+        "version": "44.0.6",
+        "isSemVerMajor": true
+      }
+    },
+    {
+      "package": "@expo/code-signing-certificates",
+      "severity": "high",
+      "direct": false,
+      "advisory_urls": [],
+      "fixAvailable": true
+    },
+    {
+      "package": "@expo/config-plugins",
+      "severity": "moderate",
+      "direct": false,
+      "advisory_urls": [],
+      "fixAvailable": true
+    },
+    {
+      "package": "expo",
+      "severity": "high",
+      "direct": true,
+      "advisory_urls": [],
+      "fixAvailable": {
+        "name": "expo",
+        "version": "44.0.6",
+        "isSemVerMajor": true
+      }
+    },
+    {
+      "package": "node-forge",
+      "severity": "high",
+      "direct": false,
+      "advisory_urls": [
+        "https://github.com/advisories/GHSA-86w9-cpqp-85rv"
+      ],
+      "fixAvailable": {
+        "name": "expo",
+        "version": "44.0.6",
+        "isSemVerMajor": true
+      }
+    },
+    {
+      "package": "uuid",
+      "severity": "moderate",
+      "direct": false,
+      "advisory_urls": [
+        "https://github.com/advisories/GHSA-w5hq-g745-h8pq"
+      ],
+      "fixAvailable": true
+    },
+    {
+      "package": "xcode",
+      "severity": "moderate",
+      "direct": false,
+      "advisory_urls": [],
+      "fixAvailable": true
+    },
+    {
+      "package": "zod",
+      "severity": "high",
+      "direct": false,
+      "advisory_urls": [
+        "https://github.com/advisories/GHSA-mrhx-c7xc-m3w5"
+      ],
+      "fixAvailable": {
+        "name": "expo",
+        "version": "44.0.6",
+        "isSemVerMajor": true
+      }
+    }
+  ],
+  "decision": "No forced Expo 44 downgrade. Supported dependency remediation/native compatibility review remains a release blocker."
+}

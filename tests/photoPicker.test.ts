@@ -1,0 +1,6 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {choosePhotoFile,cancelPhotoPicker} from '../src/media/photoPicker.ts';
+function documentFixture(){let attached=false,clicks=0;const input={type:'',accept:'',capture:'',style:{cssText:''},files:null as File[]|null,onchange:null as (()=>void)|null,oncancel:null as (()=>void)|null,setAttribute(){},click(){assert.equal(attached,true,'input must remain connected while the chooser is open');clicks++;},remove(){attached=false;}};return {doc:{createElement:()=>input,body:{appendChild(){attached=true;}}} as unknown as Document,input,attached:()=>attached,clicks:()=>clicks};}
+test('photo chooser stays connected until selection and cleans up without touching saved media',async()=>{const f=documentFixture(),result=choosePhotoFile(false,f.doc);assert.equal(f.attached(),true);const file={} as File;f.input.files=[file];f.input.onchange!();assert.equal(await result,file);assert.equal(f.attached(),false);assert.equal(f.clicks(),1);});
+test('cancel, account exit and bounded failure restore the pending operation',async()=>{const a=documentFixture(),first=choosePhotoFile(true,a.doc);cancelPhotoPicker();assert.equal(await first,null);assert.equal(a.attached(),false);const b=documentFixture();await assert.rejects(choosePhotoFile(false,b.doc,5),/timed out/);assert.equal(b.attached(),false);});

@@ -1,0 +1,54 @@
+{
+  "cli": {
+    "version": "27.2.0",
+    "appVersionSource": "local"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "environment": "development",
+      "env": {
+        "CLEANPROOF_VARIANT": "development"
+      }
+    },
+    "staging": {
+      "distribution": "internal",
+      "environment": "preview",
+      "env": {
+        "CLEANPROOF_VARIANT": "staging",
+        "EXPO_PUBLIC_CLEANPROOF_DEMO_TOOLS": "0",
+        "EXPO_PUBLIC_CLEANPROOF_ENVIRONMENT": "staging"
+      },
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "production": {
+      "distribution": "store",
+      "environment": "production",
+      "env": {
+        "CLEANPROOF_VARIANT": "production",
+        "EXPO_PUBLIC_CLEANPROOF_DEMO_TOOLS": "0",
+        "EXPO_PUBLIC_CLEANPROOF_ENVIRONMENT": "production"
+      },
+      "android": {
+        "buildType": "app-bundle",
+        "image": "ubuntu-26.04-jdk-17-ndk-r27b-sdk-58"
+      },
+      "node": "24.22.1",
+      "ios": {
+        "image": "macos-tahoe-26.6-xcode-27.0"
+      }
+    }
+  },
+  "submit": {
+    "production": {
+      "android": {
+        "track": "internal",
+        "releaseStatus": "draft"
+      },
+      "ios": {}
+    }
+  }
+}

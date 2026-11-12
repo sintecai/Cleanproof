@@ -1,0 +1,7 @@
+# Report return and lock-screen status
+
+The account entry hides the workspace and clears its in-memory browser account and passphrase when the document becomes hidden. Native/business access also locks on background. Opening a PDF in another tab can therefore coincide with a legitimate visibility transition. The reported device sequence has not been reproduced, so this is a suspected mechanism rather than a verified root cause.
+
+For an authenticated user with a report preview or prepared PDF open at backgrounding, a return within 60 seconds attempts to restore the same account and revalidate server memberships before reopening the workspace. The background lock remains in force; this does not apply to password recovery or normal backgrounding. A changed account, expired interval or failed validation leaves the lock flow in place. No database, key, queue or backend policy changes are made. The earlier connected email/password entry is retained; its brand mark is a sparkle.
+
+Typecheck, host tests, email-only regression tests and web build passed. The decision boundary has a unit test; actual browser verification of report export, focus changes, logout, session expiration and membership revocation is still required. No native-device test was run. The original browser's device-only encrypted data remains unbacked up, and this increment must not be deployed to that staging origin until the requested protected backup is established.

@@ -1,0 +1,148 @@
+{
+  "apkSha256": "715a5c7039069f21214f9eaea74adfb7dd385470c6f9f5c2a163c1e2cb405031",
+  "tester": "",
+  "deviceAlias": "",
+  "model": "",
+  "androidVersion": "",
+  "testTime": "",
+  "cases": [
+    {
+      "case": "Installer acknowledgement",
+      "status": "Not run",
+      "observedResult": "",
+      "sanitisedEvidence": ""
+    },
+    {
+      "case": "Visible startup without Metro",
+      "status": "Not run",
+      "observedResult": "",
+      "sanitisedEvidence": ""
+    },
+    {
+      "case": "SQLCipher and secure key storage",
+      "status": "Not run",
+      "observedResult": "",
+      "sanitisedEvidence": ""
+    },
+    {
+      "case": "Existing-data upgrade",
+      "status": "Not run",
+      "observedResult": "",
+      "sanitisedEvidence": ""
+    },
+    {
+      "case": "Device lock/background unlock",
+      "status": "Not run",
+      "observedResult": "",
+      "sanitisedEvidence": ""
+    },
+    {
+      "case": "Offline cold launch/local persistence",
+      "status": "Not run",
+      "observedResult": "",
+      "sanitisedEvidence": ""
+    },
+    {
+      "case": "Authenticated offline lease/expiry",
+      "status": "Not run",
+      "observedResult": "",
+      "sanitisedEvidence": ""
+    },
+    {
+      "case": "Missing key and low-storage fail-closed",
+      "status": "Not run",
+      "observedResult": "",
+      "sanitisedEvidence": ""
+    },
+    {
+      "case": "Customers/sites/templates/version history",
+      "status": "Not run",
+      "observedResult": "",
+      "sanitisedEvidence": ""
+    },
+    {
+      "case": "Draft/validation/scoring",
+      "status": "Not run",
+      "observedResult": "",
+      "sanitisedEvidence": ""
+    },
+    {
+      "case": "Camera/permissions/orientation/encrypted photo reopen",
+      "status": "Not run",
+      "observedResult": "",
+      "sanitisedEvidence": ""
+    },
+    {
+      "case": "Actions/resolution/history",
+      "status": "Not run",
+      "observedResult": "",
+      "sanitisedEvidence": ""
+    },
+    {
+      "case": "Immutable completion/correction",
+      "status": "Not run",
+      "observedResult": "",
+      "sanitisedEvidence": ""
+    },
+    {
+      "case": "PDF/pagination/share/cancellation/temp cleanup",
+      "status": "Not run",
+      "observedResult": "",
+      "sanitisedEvidence": ""
+    },
+    {
+      "case": "Keyboard/large text/TalkBack",
+      "status": "Not run",
+      "observedResult": "",
+      "sanitisedEvidence": ""
+    },
+    {
+      "case": "Actual Auth/refresh/reset/membership",
+      "status": "Not run",
+      "observedResult": "",
+      "sanitisedEvidence": ""
+    },
+    {
+      "case": "Both queues and private photo sync/second client",
+      "status": "Not run",
+      "observedResult": "",
+      "sanitisedEvidence": ""
+    },
+    {
+      "case": "Conflicts/lost acknowledgements/interrupted transfers",
+      "status": "Not run",
+      "observedResult": "",
+      "sanitisedEvidence": ""
+    },
+    {
+      "case": "Cross-company/unassigned-site/direct-object denial",
+      "status": "Not run",
+      "observedResult": "",
+      "sanitisedEvidence": ""
+    },
+    {
+      "case": "Reduced-site isolated recovery",
+      "status": "Not run",
+      "observedResult": "",
+      "sanitisedEvidence": ""
+    },
+    {
+      "case": "Paired actual Supabase restore",
+      "status": "Not run",
+      "observedResult": "",
+      "sanitisedEvidence": ""
+    },
+    {
+      "case": "Actual orphan cleanup",
+      "status": "Not run",
+      "observedResult": "",
+      "sanitisedEvidence": ""
+    },
+    {
+      "case": "iOS native gates",
+      "status": "Not run",
+      "observedResult": "",
+      "sanitisedEvidence": ""
+    }
+  ]
+}

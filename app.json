@@ -1,0 +1,60 @@
+{
+  "expo": {
+    "name": "CleanProof",
+    "slug": "cleanproof-demo",
+    "version": "0.7.0",
+    "scheme": "cleanproof-demo",
+    "orientation": "portrait",
+    "platforms": [
+      "android",
+      "ios",
+      "web"
+    ],
+    "updates": {
+      "enabled": false
+    },
+    "ios": {
+      "bundleIdentifier": "com.sicyinternational.cleanproof.demo",
+      "supportsTablet": false
+    },
+    "android": {
+      "package": "com.sicyinternational.cleanproof.demo",
+      "allowBackup": false,
+      "permissions": [
+        "android.permission.CAMERA"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-sqlite",
+        {
+          "useSQLCipher": true,
+          "enableFTS": false
+        }
+      ],
+      [
+        "expo-secure-store",
+        {
+          "configureAndroidBackup": true
+        }
+      ],
+      "expo-status-bar",
+      "expo-sharing",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Select a synthetic cleaning inspection image.",
+          "cameraPermission": "Capture synthetic cleaning inspection evidence.",
+          "microphonePermission": false
+        }
+      ],
+      "./plugins/withPrivateDataProtection.cjs",
+      "./plugins/withLocalPreviewNetwork.cjs"
+    ],
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    }
+  }
+}

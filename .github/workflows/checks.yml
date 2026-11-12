@@ -1,0 +1,28 @@
+name: CleanProof checks
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  host-and-schema:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm ci --prefix backend
+      - run: npm run secrets:check
+      - run: npm run test:release-config
+      - run: npm run test:build-config
+      - run: npm run check:all
+      - run: npm run build
+      - run: echo 'Host/schema checks do not prove Auth/REST/Storage or native-device acceptance. No deployment occurs.'

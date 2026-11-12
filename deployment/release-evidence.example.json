@@ -1,0 +1,65 @@
+{
+  "releaseApproval": "pending",
+  "checks": {
+    "fresh-customer-workspace": {
+      "status": "not-run",
+      "sourceCommit": "",
+      "evidence": ""
+    },
+    "email-auth": {
+      "status": "not-run",
+      "sourceCommit": "",
+      "evidence": ""
+    },
+    "team-roles": {
+      "status": "not-run",
+      "sourceCommit": "",
+      "evidence": ""
+    },
+    "real-sync-two-clients": {
+      "status": "not-run",
+      "sourceCommit": "",
+      "evidence": ""
+    },
+    "private-photos": {
+      "status": "not-run",
+      "sourceCommit": "",
+      "evidence": ""
+    },
+    "issued-reports": {
+      "status": "not-run",
+      "sourceCommit": "",
+      "evidence": ""
+    },
+    "paired-restore": {
+      "status": "not-run",
+      "sourceCommit": "",
+      "evidence": ""
+    },
+    "cleanup": {
+      "status": "not-run",
+      "sourceCommit": "",
+      "evidence": ""
+    },
+    "dependency-review": {
+      "status": "not-run",
+      "sourceCommit": "",
+      "evidence": ""
+    },
+    "privacy-review": {
+      "status": "not-run",
+      "sourceCommit": "",
+      "evidence": ""
+    },
+    "android-native": {
+      "status": "not-run",
+      "sourceCommit": "",
+      "evidence": ""
+    },
+    "ios-native": {
+      "status": "not-run",
+      "sourceCommit": "",
+      "evidence": ""
+    }
+  }
+}

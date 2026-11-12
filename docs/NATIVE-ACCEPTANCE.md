@@ -1,0 +1,15 @@
+# CP001 native acceptance — pending
+
+Record platform, OS, device, build mode, commit and result for each check. Use synthetic records only. Android and iOS physical-device execution is still required. Do not mark CP001 accepted based on host tests alone.
+
+1. Build with SQLCipher plugin enabled. Confirm the app opens encrypted storage with a device passcode. Confirm the no-passcode state displays the safe lock requirement where supported. Expo Go/plaintext-driver execution must fail closed without writing inspection payloads.
+2. Select all five outcomes; include Fail and N/A explanations. Exercise Unicode, quotation marks, multiline notes, 2,000-character limit, keyboard scrolling and font scaling. All buttons and notes must remain usable with screen readers and large text.
+3. Wait for saved acknowledgement, force-stop/kill the process and relaunch without clearing data. Outcomes, notes, pending-operation count and revision must persist. Repeat at least 20 times per platform and during rapid edits/background transitions. Record any unsaved edits separately from acknowledged commits.
+4. Kill during a pending save: accept either the previous committed revision or the complete new revision; never a half-updated answer/outbox pair. Compare a controlled synthetic database through developer instrumentation without exposing key material in logs.
+5. Test true offline cold startup using a locally installed build with an embedded JavaScript bundle. A Metro development client alone is insufficient evidence: it may need the development server on startup. Android: `npx expo run:android --variant release`; iOS on a Mac: `npx expo run:ios --configuration Release`. Local release testing does not mean store publication. Use existing Sicy signing where required. Set airplane mode after installation and repeat the saved-draft kill/relaunch test.
+6. In an isolated disposable test installation, make storage unwritable/full and verify error state, retained form and retry. Do not use production devices/data for destructive fault injection. Remove or alter a test key: existing database must be preserved and show safe failure, never a fresh blank inspection.
+7. Verify device lock/unlock, app background/foreground and process recreation do not leak a key, create a replacement database or silently reset. Inspect release logs for synthetic notes/key leakage. Validate Android backup exclusion and iOS device-bound key behaviour. A simulator is not sufficient for these OS security gates.
+8. Confirm review blocks unanswered items, Fail without explanation and N/A without reason. Confirm an all-N/A checklist does not claim a numeric pass score. No real submission, report, sync or client sharing should occur.
+9. Check layout on a small Android phone and small iPhone; minimum touch size, contrast, selected state, keyboard dismissal and focus. Capture screenshots only with synthetic content for review.
+
+Expected result: all acknowledged local writes survive, no plaintext fallback, no silent reset, clear unsaved/error states. If a native gate fails, fix and repeat the relevant recovery/security checks before expanding features.

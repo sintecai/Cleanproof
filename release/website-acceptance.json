@@ -1,0 +1,18 @@
+{
+  "scope": "Production customer website only; native stores are excluded",
+  "publicCustomerAccessApproved": false,
+  "gates": {
+    "productionImmediateSignup": true,
+    "productionAuthenticatedBrowserWorkflow": false,
+    "productionTwoAccountIsolationAndDeletion": true,
+    "recoveryDeliveryResetLogin": false,
+    "hostedRedirectSettingsVerified": false,
+    "productionPhotosAndSync": true,
+    "productionReportDownloadedAndOpened": false,
+    "retentionApproved": false,
+    "pairedHostedRestore": false,
+    "privacySupportDeletionReviewed": false,
+    "dependencyRiskResolvedOrApproved": false
+  },
+  "evidence": "release/WEBSITE-ACCEPTANCE-CURRENT.md"
+}
