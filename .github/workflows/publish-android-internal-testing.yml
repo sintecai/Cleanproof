@@ -1,0 +1,80 @@
+name: Publish CleanProof Android internal-testing branch
+
+on:
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+
+    steps:
+      - name: Verify bundle and publish exact commit
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_SHA: ${{ github.sha }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+
+          expected=ba8d08e81f3cb0762c0189bab6ecd5b3a5e110ca
+          checksum=3d8787d620a21727ac3bab0e18bb271863e405b3d5b6b968376e14080e468789
+          target=refs/heads/release/android-internal-testing
+          remote=https://github.com/sintecai/Cleanproof.git
+          branch_url=https://github.com/sintecai/Cleanproof/tree/release/android-internal-testing
+
+          tmp=$(mktemp -d)
+          trap 'rm -rf "$tmp"' EXIT
+
+          # Read the ZIP from the exact main commit used for this run.
+          curl --fail --silent --show-error --location \
+            --proto '=https' --proto-redir '=https' \
+            "https://raw.githubusercontent.com/sintecai/Cleanproof/$SOURCE_SHA/CleanProof-android-internal-testing.zip" \
+            --output "$tmp/release.zip"
+
+          unzip -p "$tmp/release.zip" CleanProof-android-internal-testing.bundle \
+            > "$tmp/release.bundle"
+          printf '%s  %s\n' "$checksum" "$tmp/release.bundle" | sha256sum --check -
+
+          git init -q "$tmp/repo"
+          cd "$tmp/repo"
+          git bundle verify "$tmp/release.bundle"
+          git fetch --no-tags "$tmp/release.bundle" "$target"
+
+          # A parentless commit produces exactly one SHA on this line.
+          test "$(git rev-list --parents -n 1 FETCH_HEAD)" = "$expected"
+          test "$(git cat-file -t "$expected:package.json")" = blob
+          test "$(git cat-file -t "$expected:eas.json")" = blob
+
+          # Authenticate Git without putting the token in the URL or Git config files.
+          auth=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
+          printf '::add-mask::%s\n' "$auth"
+          export GIT_CONFIG_COUNT=1
+          export GIT_CONFIG_KEY_0=http.https://github.com/.extraheader
+          export GIT_CONFIG_VALUE_0="Authorization: Basic $auth"
+          export GIT_TERMINAL_PROMPT=0
+
+          remote_sha() {
+            git ls-remote --refs "$remote" "$target" | cut -f1
+          }
+
+          current=$(remote_sha)
+          if [[ -z "$current" ]]; then
+            git push "$remote" "$expected:$target"
+          elif [[ "$current" != "$expected" ]]; then
+            printf 'Refusing to overwrite %s (currently %s).\n' "$target" "$current" >&2
+            exit 1
+          fi
+
+          test "$(remote_sha)" = "$expected"
+          {
+            printf 'Verified branch: %s\n\n' "$branch_url"
+            printf 'Commit: `%s`\n\n' "$expected"
+            printf 'Actions run: %s\n' "$RUN_URL"
+          } >> "$GITHUB_STEP_SUMMARY"
